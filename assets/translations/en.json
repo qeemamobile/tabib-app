@@ -1,0 +1,81 @@
+{
+  "auth": {
+    "login": {
+      "welcomeBack": "Welcome Back",
+      "subtitle": "Receive bookings, provide online consultations, and manage your medical appointments easily.",
+      "phoneNumber": "Phone Number",
+      "enterPhoneNumber": "Enter phone number",
+      "loginButton": "Login"
+    },
+    "welcome": {
+      "title": "Your medical care... starts here",
+      "description": "Book a medical consultation online with trusted doctors in various specialties.",
+      "loginButton": "Login",
+      "createAccountButton": "Create New Account",
+      "continueAsGuestButton": "Continue as Guest"
+    },
+    "role": {
+      "title": "Choose your account type",
+      "description": "Select how you want to use the Tabib app; you can change some data later from your account.",
+      "accountType": "Account Type",
+      "haveAccount": "Have an account? ",
+      "user": {
+        "title": "User",
+        "subtitle": "Book medical consultations, follow your appointments, and keep your medical records in one place."
+      },
+      "doctor": {
+        "title": "Doctor",
+        "subtitle": "Provide online consultations and manage your medical appointments easily."
+      }
+    },
+    "signUp": {
+      "title": "Join Tabib Doctors",
+      "description": "Register your professional data to be reviewed and activate your account to provide medical consultations online.",
+      "name": "Name",
+      "enterName": "Enter your full name",
+      "phoneNumber": "Phone Number",
+      "enterPhone": "Enter your phone number",
+      "email": "Email",
+      "enterEmail": "Enter your email",
+      "languageLabel": "Language",
+      "languageDescription": "Preferred language for communication",
+      "signUpButton": "Next"
+    },
+    "completeProfile": {
+      "skip": "Skip",
+      "next": "Next",
+      "stepOne": {
+        "welcomeDoctor": "Welcome Doctor..",
+        "professionalData": "Professional Data Registration",
+        "mainSpecialization": "Main Specialization",
+        "chooseMainSpecialization": "Choose Main Specialization",
+        "subSpecializations": "Sub-Specializations",
+        "chooseSubSpecializations": "Choose Sub-Specializations",
+        "professionalTitle": "Professional Title",
+        "consultant": "Consultant",
+        "yearsOfExperience": "Years of Experience",
+        "yearsExperiencePlaceholder": "8 Years"
+      },
+      "stepTwo": {
+        "completeYourProfile": "Complete Your Profile",
+        "completeToActivate": "Complete to activate your profile as a doctor within the app.",
+        "documents": "Documents",
+        "documentsDescription": "We need some documents to verify your account and activate your profile as a doctor within the app.",
+        "academicCertificates": "Academic Certificates",
+        "idProof": "ID Proof",
+        "medicalLicenseImage": "Medical License Image",
+        "professionalPhoto": "Professional Photo",
+        "uploadPhoto": "Upload Photo",
+        "uploadFile": "Upload File",
+        "submitForReview": "Submit for Review",
+        "canEditLater": "You can edit this data later from your medical profile."
+      }
+    },
+    "specialties": {
+      "general": "General Medicine",
+      "pediatrics": "Pediatrics",
+      "dentistry": "Dentistry",
+      "cardiology": "Cardiology"
+    }
+  }
+}

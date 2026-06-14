@@ -1,0 +1,51 @@
+name: tabib_app
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.1
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.8
+  flutter_native_splash: ^2.4.7
+  cached_network_image: ^3.4.1
+  flutter_svg: ^2.3.0
+  easy_localization: ^3.0.8
+  smooth_page_indicator: ^2.0.1
+  image_picker: ^1.2.2
+  equatable: ^2.0.8
+  flutter_bloc: ^9.1.1
+  get_it: ^9.2.1
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/svgs/
+    - assets/translations/
+
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf
+        - asset: assets/fonts/Cairo-Bold.ttf
+        - asset: assets/fonts/Cairo-SemiBold.ttf
+
+  
+  

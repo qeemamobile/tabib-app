@@ -1,0 +1,81 @@
+{
+  "auth": {
+    "login": {
+      "welcomeBack": "مرحبًا بعودتك",
+      "subtitle": "استقبل الحجوزات، قدّم استشارات أونلاين، وأدر مواعيدك الطبية بسهولة.",
+      "phoneNumber": "رقم الجوال",
+      "enterPhoneNumber": "أدخل رقم الجوال",
+      "loginButton": "تسجيل الدخول"
+    },
+    "welcome": {
+      "title": "رعــايتك الطــبية... تبــدأ من هنا",
+      "description": "احجز استشارة طبية أونلاين مع أطباء موثوقين في مختلف التخصصات.",
+      "loginButton": "تسجيل الدخول",
+      "createAccountButton": "انشاء حساب جديد",
+      "continueAsGuestButton": "المتابعة كزائر"
+    },
+    "role": {
+      "title": "اختر نوع حسابك",
+      "description": "حدد الطريقة التي تريد استخدام تطبيق طبيب بها، ويمكنك تغيير بعض البيانات لاحقًا من حسابك.",
+      "accountType": "نوع الحساب",
+      "haveAccount": "لديك حساب؟ ",
+      "user": {
+        "title": "مستخدم",
+        "subtitle": "احجز استشارات طبية، تابع مواعيدك، واحتفظ بسجلاتك الطبية في مكان واحد."
+      },
+      "doctor": {
+        "title": "طبيب",
+        "subtitle": "قدّم استشارات أونلاين، وأدر مواعيدك الطبية بسهولة."
+      }
+    },
+    "signUp": {
+      "title": "انضم إلى أطباء طبيب",
+      "description": "سجّل بياناتك المهنية ليتم مراجعتها وتفعيل حسابك لتقديم الاستشارات الطبية أونلاين.",
+      "name": "الاسم",
+      "enterName": "ادخل اسمك كامل",
+      "phoneNumber": "رقم الجوال",
+      "enterPhone": "أدخل رقم جوالك",
+      "email": "البريد الالكتروني",
+      "enterEmail": "أدخل بريدك الإلكتروني",
+      "languageLabel": "اللغة",
+      "languageDescription": "اللغة المفضلة للتواصل",
+      "signUpButton": "التالي "
+    },
+    "completeProfile": {
+      "skip": "تخطي",
+      "next": "التالي",
+      "stepOne": {
+        "welcomeDoctor": "..مرحبًا دكتور",
+        "professionalData": "تسجيل البيانات المهنية",
+        "mainSpecialization": "التخصص الرئيسي",
+        "chooseMainSpecialization": "اختر التخصص الرئيسي",
+        "subSpecializations": "التخصصات الفرعية",
+        "chooseSubSpecializations": "اختر التخصصات الفرعية",
+        "professionalTitle": "المسمى المهني",
+        "consultant": "استشاري",
+        "yearsOfExperience": "سنوات الخبرة",
+        "yearsExperiencePlaceholder": "8 سنوات"
+      },
+      "stepTwo": {
+        "completeYourProfile": "أكمل ملفك",
+        "completeToActivate": "أكمل لتفعيل ملفك كطبيب داخل التطبيق.",
+        "documents": "المستندات",
+        "documentsDescription": "نحتاج إلى بعض المستندات للتحقق من حسابك وتفعيل ملفك كطبيب داخل التطبيق.",
+        "academicCertificates": "الشهادات العلمية",
+        "idProof": "إثبات الهوية",
+        "medicalLicenseImage": "صورة الترخيص الطبي",
+        "professionalPhoto": "صورة شخصية مهنية",
+        "uploadPhoto": "رفع الصورة",
+        "uploadFile": "رفع الملف",
+        "submitForReview": "إرسال للمراجعة",
+        "canEditLater": "يمكنك تعديل هذه البيانات لاحقًا من ملفك الطبي."
+      }
+    },
+    "specialties": {
+      "general": "طب عام",
+      "pediatrics": "طب الأطفال",
+      "dentistry": "طب الأسنان",
+      "cardiology": "القلب والأوعية الدموية"
+    }
+  }
+}
