@@ -16,6 +16,7 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
   final Color blackColor;
   final Color primaryColor;
   final Color primaryColor300;
+  final Color primaryColor500;
   final Color textColor100;
   final Color textColor200;
 
@@ -39,7 +40,7 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
     required this.textColor300,
     required this.textColor600,
     required this.textColor200,
-    required this.textColor100,
+    required this.textColor100, required this.primaryColor500,
   });
   @override
   ThemeExtension<AppThemeExtension> copyWith({
@@ -57,6 +58,7 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
     Color? blackColor,
     Color? primaryColor,
     Color? primaryColor300,
+    Color? primaryColor500,
     Color? textColor300,
     Color? textColor600,
     Color? textColor200,
@@ -80,7 +82,7 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
       textColor300: textColor300 ?? this.textColor300,
       textColor600: textColor600 ?? this.textColor600,
       textColor100: textColor100 ?? this.textColor100,
-        primaryColor300:  primaryColor300 ?? this.primaryColor300,
+        primaryColor300:  primaryColor300 ?? this.primaryColor300, primaryColor500: primaryColor500 ?? this.primaryColor500 ,
     );
   }
 
@@ -109,6 +111,7 @@ class AppThemeExtension extends ThemeExtension<AppThemeExtension> {
       textColor600: Color.lerp(textColor600, other.textColor600, t)!,
       textColor100: Color.lerp(textColor100, other.textColor100, t)!,
       primaryColor300: Color.lerp(primaryColor300, other.primaryColor300, t)!,
+      primaryColor500:  Color.lerp(primaryColor500, other.primaryColor500, t)!,
     );
   }
 }

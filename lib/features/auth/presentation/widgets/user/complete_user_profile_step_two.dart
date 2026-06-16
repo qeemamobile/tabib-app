@@ -2,11 +2,14 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabib_app/core/extension/app_extension.dart';
+import 'package:tabib_app/core/utilities/custom_text_form_filed.dart';
+import 'package:tabib_app/features/auth/presentation/widgets/custom_radio_button.dart';
+import 'package:tabib_app/features/auth/presentation/widgets/drop_down_menu.dart';
 import 'package:tabib_app/features/auth/presentation/widgets/uploads_widget.dart';
-import '../view_model/complete_profile_cubit.dart';
+import '../../view_model/doc/complete_doc_profile_cubit.dart';
 
-class CompleteProfileStepTwo extends StatelessWidget {
-  const CompleteProfileStepTwo({super.key});
+class CompleteUserProfileStepTwo extends StatelessWidget {
+  const CompleteUserProfileStepTwo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,45 +20,48 @@ class CompleteProfileStepTwo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'auth.completeProfile.stepTwo.completeYourProfile'.tr(),
-            style: theme.bold24.copyWith(fontSize: 20, color: theme.textColor600),
-          ),
-          Text(
-            'auth.completeProfile.stepTwo.completeToActivate'.tr(),
-            style: theme.medium16.copyWith(
-              fontSize: 18,
-              color: theme.textColor300,
-            ),
-          ),
-          Text(
-            'auth.completeProfile.stepTwo.documents'.tr(),
+            'Do you have any chronic illnesses?'.tr(),
             style: theme.medium16.copyWith(fontSize: 18),
           ),
-          Text(
-            'auth.completeProfile.stepTwo.documentsDescription'.tr(),
-            textAlign: TextAlign.start,
-            style: theme.regular14.copyWith(color: theme.textColor200),
-          ),
-          _UploadFiles(
-            title: 'auth.completeProfile.stepTwo.academicCertificates'.tr(),
-              onTap: (){
-                context.read<CompleteProfileCubit>().updateAcademicCertificateImage();
-              }
-          ),
-          _UploadFiles(title: 'auth.completeProfile.stepTwo.idProof'.tr(),
-              onTap: ()=> context.read<CompleteProfileCubit>().updateIdProofImage()
 
+          CustomDropdownField(hintText: "sensitive"),
+          Text(
+            "Are you taking any essential medications?",
+            style: theme.medium16.copyWith(fontSize: 18),
           ),
-          _UploadFiles(
-            title: 'auth.completeProfile.stepTwo.medicalLicenseImage'.tr(),
-              onTap: ()=> context.read<CompleteProfileCubit>().updateMedicalLicenseImage()
+          CustomTextFormField(hintText: "Choose the essential medications you take"),
+          Text(
+            "Are you allergic to any certain medications?",
+            style: theme.medium16.copyWith(fontSize: 18),
           ),
-          _UploadFiles(
-            title: 'auth.completeProfile.stepTwo.professionalPhoto'.tr(),
-            hintText: 'auth.completeProfile.stepTwo.uploadPhoto'.tr(),
-              onTap: ()=> context.read<CompleteProfileCubit>().updateProfessionalPhoto()
+
+          CustomRadioGroup(),
+          CustomTextFormField(hintText: "Write the type of allergy or the name of the medication."),
+
+          Text(
+            "Do you want to add reports/rays?",
+            style: theme.medium16.copyWith(fontSize: 18),
           ),
-          SizedBox(height: 49),
+        UploadsWidget(hintText:"Upload files" ),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(

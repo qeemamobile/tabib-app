@@ -6,6 +6,7 @@ abstract class AppColors {
   Color get blackColor;
   Color get primaryColor;
   Color get primaryColor300;
+  Color get primaryColor500;
   Color get textColor300;
   Color get textColor600;
   Color get textColor200;

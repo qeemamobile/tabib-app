@@ -77,5 +77,15 @@
       "dentistry": "طب الأسنان",
       "cardiology": "القلب والأوعية الدموية"
     }
+  },
+  "layout": {
+    "navBar": {
+      "home": "الرئيسية",
+      "patients": "المرضى",
+      "appointments": "المواعيد",
+      "profile": "الملف الشخصي",
+      "reservations": "الحجوزات",
+      "records": "السجلات"
+    }
   }
 }

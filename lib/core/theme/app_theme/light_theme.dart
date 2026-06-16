@@ -56,6 +56,7 @@ class LightTheme extends AppTheme {
         textColor200: color.textColor200,
         textColor100: color.textColor100,
         primaryColor300: color.primaryColor300,
+        primaryColor500: color.primaryColor500,
       ),
     ],
   );

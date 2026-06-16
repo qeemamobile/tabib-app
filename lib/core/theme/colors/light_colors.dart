@@ -30,4 +30,10 @@ class LightColors extends AppColors {
   Color get primaryColor300 =>
   Color(0xFF6E7CA1);
 
+  @override
+
+  Color get primaryColor500 => Color(
+      0xFF263B73
+  );
+
 }

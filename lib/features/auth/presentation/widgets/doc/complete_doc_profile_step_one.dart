@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:tabib_app/core/extension/app_extension.dart';
 import 'package:tabib_app/features/auth/presentation/widgets/drop_down_menu.dart';
 
-class CompleteProfileStepOne extends StatelessWidget {
-  const CompleteProfileStepOne({super.key, required this.pageController});
+class CompleteDocProfileStepOne extends StatelessWidget {
+  const CompleteDocProfileStepOne({super.key, required this.pageController});
   final PageController pageController;
 
   @override

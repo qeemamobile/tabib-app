@@ -3,25 +3,25 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:tabib_app/core/extension/app_extension.dart';
-import 'package:tabib_app/features/auth/presentation/widgets/complete_profile_step_two.dart';
-import '../widgets/complete_profile_step_one.dart';
+import '../../widgets/doc/complete_doc_profile_step_one.dart';
+import '../../widgets/doc/complete_doc_profile_step_two.dart';
 
-class CompleteProfileView extends StatefulWidget {
-  const CompleteProfileView({super.key});
+class CompleteDocProfileView extends StatefulWidget {
+  const CompleteDocProfileView({super.key});
 
   @override
-  State<CompleteProfileView> createState() => _CompleteProfileViewState();
+  State<CompleteDocProfileView> createState() => _CompleteProfileViewState();
 }
 
-class _CompleteProfileViewState extends State<CompleteProfileView> {
+class _CompleteProfileViewState extends State<CompleteDocProfileView> {
   late PageController _pageController;
   int _currentPage = 0;
   @override
   void initState() {
     _pageController = PageController();
     completesProfileSteps = [
-      CompleteProfileStepOne(pageController: _pageController),
-      CompleteProfileStepTwo(),
+      CompleteDocProfileStepOne(pageController: _pageController),
+      CompleteDocProfileStepTwo(),
     ];
 
     super.initState();

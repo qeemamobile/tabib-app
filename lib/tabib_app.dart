@@ -17,7 +17,7 @@ debugShowCheckedModeBanner: false,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       onGenerateRoute: Routes.onGenerateRoute,
-      initialRoute: AppRoutes.completeProfileView,
+      initialRoute: AppRoutes.mainLayoutView,
       theme: LightTheme().themeData,
     );
   }

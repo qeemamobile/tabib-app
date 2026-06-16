@@ -22,4 +22,8 @@ extension AppNavigatorExtension on BuildContext {
     }
     return ext;
   }
+
 }
+
+extension OnSliver on Widget {
+  SliverToBoxAdapter get toSliverBoxAdapter => SliverToBoxAdapter(child: this);}

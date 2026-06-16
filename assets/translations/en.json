@@ -77,5 +77,24 @@
       "dentistry": "Dentistry",
       "cardiology": "Cardiology"
     }
+  },
+  "layout": {
+    "navBar": {
+      "home": "Home",
+      "patients": "Patients",
+      "appointments": "Appointments",
+      "profile": "Profile",
+      "reservations": "Reservations",
+      "records": "Records"
+    }
+  },
+  "appointments": {
+    "confirmed": "Confirmed",
+    "specialties": "Specialties",
+    "physiotherapy": "Physiotherapy",
+    "injuryRehabilitation": "Injury Rehabilitation",
+    "motorRehabilitation": "Motor Rehabilitation",
+    "drName": "Dr. Ahmed Ramadan",
+    "dateTime": "Tuesday 24.12.2025 | 5 PM"
   }
 }

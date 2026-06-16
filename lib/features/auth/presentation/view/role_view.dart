@@ -17,8 +17,8 @@ class RoleView extends StatelessWidget {
       body: SafeArea(
         child: Stack(
           children: [
-            Positioned(
-              left: 0,
+            PositionedDirectional(
+              start: 0,
               top: 60,
               child: CustomImageView(imagePath: AssetsManager.alba),
             ),
@@ -26,55 +26,48 @@ class RoleView extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 66),
+                  const SizedBox(height: 66),
                   Align(
                     alignment: Alignment.topCenter,
                     child: CustomImageView(imagePath: AssetsManager.logo),
                   ),
                   const SizedBox(height: 36),
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Text(
-                      "auth.role.title".tr(),
-                      style: theme.medium20.copyWith(
-                        fontWeight: FontWeight.w700,
-                      ),
-                      textAlign: TextAlign.right,
+                  Text(
+                    "auth.role.title".tr(),
+                    style: theme.medium20.copyWith(
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                   const SizedBox(height: 8),
                   Text(
                     "auth.role.description".tr(),
-                    textAlign: TextAlign.right,
                     style: theme.medium16.copyWith(
                       fontWeight: FontWeight.bold,
                       color: theme.textColor300,
                     ),
                   ),
                   const SizedBox(height: 20),
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Text(
-                      "auth.role.accountType".tr(),
-                      style: theme.bold18.copyWith(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 20,
-                      ),
-                      textAlign: TextAlign.right,
+                  Text(
+                    "auth.role.accountType".tr(),
+                    style: theme.bold18.copyWith(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 20,
                     ),
                   ),
-                    const SizedBox(height: 10),
-                  RoleSelectionWidget(),
-                  Spacer(),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: Text("auth.login.loginButton".tr()),
-                  ),
-                    const SizedBox(height: 8),
-                    Center(child: HaveAccount())
-                    
+                  const SizedBox(height: 10),
+                  const RoleSelectionWidget(),
+                  const Spacer(), ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamedAndRemoveUntil(context, AppRoutes.completeProfileView, (route) => false);
+                      },
+                      child: Text("auth.login.loginButton".tr()),
+                    ),
+
+                  const SizedBox(height: 8),
+                  const Center(child: HaveAccount()),
+                  const SizedBox(height: 20),
                 ],
               ),
             ),
@@ -85,7 +78,6 @@ class RoleView extends StatelessWidget {
   }
 }
 
-
 class HaveAccount extends StatelessWidget {
   const HaveAccount({super.key});
 
@@ -93,7 +85,6 @@ class HaveAccount extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.appTheme;
     return Text.rich(
-
       TextSpan(
         children: [
           TextSpan(
