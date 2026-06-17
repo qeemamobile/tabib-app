@@ -1,14 +1,171 @@
 import 'package:flutter/material.dart';
+import 'package:tabib_app/core/extension/app_extension.dart';
+import 'package:tabib_app/core/constant/assets_manager.dart';
+import '../../../../core/routes/routes.dart';
+import '../../../../core/widgets/calendar_section.dart';
+import '../../../../core/widgets/filter_chips.dart';
+import '../../../home/presentation/widgets/request_review_doc.dart';
+import '../../../../core/widgets/reservation_card.dart';
 
-class ReservationsView extends StatelessWidget {
+enum Status { all, confirm, holding, completed, cancel }
+
+class ReservationsView extends StatefulWidget {
   const ReservationsView({super.key});
 
   @override
+  State<ReservationsView> createState() => _ReservationsViewState();
+}
+
+class _ReservationsViewState extends State<ReservationsView> {
+  ValueNotifier<Status> status = ValueNotifier(Status.all);
+  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Reservations View'),
-      ),
+    final theme = context.appTheme;
+    return Column(
+      children: [
+        const SizedBox(height: 26),
+        FilterChips(
+          filters: const ["all", "confirm", "holding", "completed", "cancel"],
+          onSelected: (index) {
+            switch (index) {
+              case 0:
+                status.value = Status.all;
+                setState(() {});
+              case 1:
+                status.value = Status.confirm;
+                setState(() {});
+              case 2:
+                status.value = Status.holding;
+                setState(() {});
+              case 3:
+                status.value = Status.completed;
+                setState(() {});
+              case 4:
+                status.value = Status.cancel;
+                setState(() {});
+            }
+          },
+        ),
+        if (status.value == Status.all) ...[
+          CalendarSection(),
+          OutlinedButton.icon(
+            style: OutlinedButton.styleFrom(
+              minimumSize: const Size(double.infinity, 48),
+              backgroundColor: const Color(0xFFE9EBF1),
+              side: BorderSide.none,
+              textStyle: theme.bold18.copyWith(
+                fontSize: 14,
+                fontWeight: FontWeight.w700,
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+            ),
+            onPressed: () {},
+            label: const Text("add Appointment"),
+            icon: const Icon(Icons.add_circle_outline),
+          ),
+        ],
+        const SizedBox(height: 16),
+
+        Expanded(
+          child: switch (status.value) {
+            Status.all => ListView.separated(
+              separatorBuilder: (context, index) => const SizedBox(height: 16),
+              itemCount: 5,
+              itemBuilder: (context, index) {
+                return ReservationCard(
+                  status: "مؤكدة - الآن",
+                  doctorName: "أ. أحمد رمضان",
+                  subTitle: "استشارة قلب وأوعية دموية",
+                  time: "08:30 م",
+                  actions: [
+                    ReservationActionButton(
+                      label: "تفاصيل الحجز",
+                      iconPath: AssetsManager.records,
+                      onTap: () {
+                        Navigator.of(context).pushNamed(AppRoutes.patientsAppointmentDetailsView);
+                      },
+                    ),
+                    ReservationActionButton(
+                      label: "بدء الجلسة",
+                      iconPath: AssetsManager.video,
+                      isFilled: true,
+                      onTap: () {},
+                    ),
+                  ],
+                );
+              },
+            ),
+            Status.confirm => ListView.separated(
+              separatorBuilder: (context, index) => const SizedBox(height: 16),
+              itemCount: 5,
+              itemBuilder: (context, index) {
+                return ReservationCard(
+                  status: "مؤكدة - الآن",
+                  doctorName: "أ. أحمد رمضان",
+                  subTitle: "استشارة قلب وأوعية دموية",
+                  time: "08:30 م",
+                  actions: [
+                    ReservationActionButton(
+                      label: "تفاصيل الحجز",
+                      iconPath: AssetsManager.report,
+                      onTap: () {
+                        Navigator.of(context).pushNamed(AppRoutes.patientsAppointmentDetailsView);
+                      },
+                    ),
+                  ],
+                );
+              },
+            ),
+            Status.holding => ListView.separated(
+              separatorBuilder: (context, index) => const SizedBox(height: 16),
+              itemCount: 5,
+              itemBuilder: (context, index) {
+                return RequestReviewDocCard();
+              },
+            ),
+            Status.completed => ListView.separated(
+              separatorBuilder: (context, index) => const SizedBox(height: 16),
+
+              itemCount: 5,
+              itemBuilder: (context, index) {
+                return ReservationCard(
+                  showTime: false,
+                  status: "مؤكدة - الآن",
+                  doctorName: "أ. أحمد رمضان",
+                  subTitle: "استشارة قلب وأوعية دموية",
+                  time: "08:30 م",
+                  actions: [
+                    ReservationActionButton(
+                      label: "انشاء تقرير",
+                      iconPath: AssetsManager.report,
+                      onTap: () {
+                        Navigator.of(context).pushNamed(AppRoutes.createReportView);
+                      },
+                    ),
+                  ],
+                );
+              },
+            ),
+            Status.cancel => ListView.separated(
+              separatorBuilder: (context, index) => const SizedBox(height: 16),
+
+              itemCount: 5,
+              itemBuilder: (context, index) {
+                return ReservationCard(
+                  showTime: false,
+                  statusBackgroundColor: const Color(0xFFF7E4E3),
+                  statusColor: const Color(0xFFFF3B30),
+                  status: "الغاء",
+                  doctorName: "أ. أحمد رمضان",
+                  subTitle: "استشارة قلب وأوعية دموية",
+                );
+              },
+            ),
+          },
+        ),
+      ],
     );
   }
 }

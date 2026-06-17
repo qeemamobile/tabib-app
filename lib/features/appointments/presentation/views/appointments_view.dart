@@ -29,14 +29,13 @@ class DoctorProfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.appTheme;
-    
+
     // Status colors derived from theme
     final confirmedBg = theme.primaryColor.withOpacity(0.1);
     final confirmedText = theme.primaryColor;
     final tagBgColor = theme.textColor100.withOpacity(0.1);
 
     return Container(
-
       decoration: BoxDecoration(
         color: theme.whiteColor,
         borderRadius: BorderRadius.circular(24.0),
@@ -64,7 +63,10 @@ class DoctorProfileCard extends StatelessWidget {
                   height: 60,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    border: Border.all(color: theme.primaryColor.withOpacity(0.2), width: 2),
+                    border: Border.all(
+                      color: theme.primaryColor.withOpacity(0.2),
+                      width: 2,
+                    ),
                     image: const DecorationImage(
                       image: NetworkImage(
                         'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=200&q=80',
@@ -80,9 +82,7 @@ class DoctorProfileCard extends StatelessWidget {
                     children: [
                       Text(
                         'appointments.drName'.tr(),
-                        style: theme.bold18.copyWith(
-                          color: theme.primaryColor,
-                        ),
+                        style: theme.bold18.copyWith(color: theme.primaryColor),
                       ),
                       const SizedBox(height: 4),
                       Text(
@@ -110,7 +110,10 @@ class DoctorProfileCard extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 14,
+                    vertical: 6,
+                  ),
                   decoration: BoxDecoration(
                     color: confirmedBg,
                     borderRadius: BorderRadius.circular(20),
@@ -125,7 +128,6 @@ class DoctorProfileCard extends StatelessWidget {
                 ),
 
                 // Doctor Profile Picture
-
               ],
             ),
             const SizedBox(height: 16),
@@ -133,9 +135,7 @@ class DoctorProfileCard extends StatelessWidget {
             // Specialties Header
             Text(
               'appointments.specialties'.tr(),
-              style: theme.medium13.copyWith(
-                color: theme.textColor300,
-              ),
+              style: theme.medium13.copyWith(color: theme.textColor300),
             ),
             const SizedBox(height: 8),
 
@@ -185,9 +185,7 @@ class DoctorProfileCard extends StatelessWidget {
                 // Price
                 Row(
                   children: [
-                    CustomImageView(
-                      imagePath: AssetsManager.moneys,
-                    ),
+                    CustomImageView(imagePath: AssetsManager.moneys),
                     Text(
                       '120',
                       style: theme.regular12.copyWith(
@@ -205,7 +203,8 @@ class DoctorProfileCard extends StatelessWidget {
       ),
     );
   }
- }
+}
+
 class SpecialtyTag extends StatelessWidget {
   final String label;
   final Color textColor;
@@ -229,10 +228,7 @@ class SpecialtyTag extends StatelessWidget {
       ),
       child: Text(
         label,
-        style: theme.medium13.copyWith(
-          color: textColor,
-          fontSize: 13,
-        ),
+        style: theme.medium13.copyWith(color: textColor, fontSize: 13),
       ),
     );
   }

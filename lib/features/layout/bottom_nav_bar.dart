@@ -1,10 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tabib_app/core/constant/assets_manager.dart';
 import 'package:tabib_app/core/extension/app_extension.dart';
 import 'package:tabib_app/core/utilities/custom_image_view.dart';
 import 'package:tabib_app/features/appointments/presentation/views/appointments_view.dart';
 import 'package:tabib_app/features/home/presentation/views/home_view.dart';
+import 'package:tabib_app/features/layout/view_model/layout_view_model.dart';
 import 'package:tabib_app/features/patients/presentation/views/patients_view.dart';
 import 'package:tabib_app/features/profile/presentation/views/profile_view.dart';
 import 'package:tabib_app/features/records/presentation/views/records_view.dart';
@@ -20,61 +22,42 @@ class MainLayout extends StatefulWidget {
 }
 
 class _MainLayoutState extends State<MainLayout> {
-  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     final bool isDoctor = widget.role == 'doc';
     final theme = context.appTheme;
+    final currentIndex=context.watch<LayoutViewModel>().state;
 
     final List<Widget> views = isDoctor
-        ?  [
-            HomeView(),
-            PatientsView(),
-      ReservationsView(),
-            ProfileView(),
-          ]
-        :  [
-            HomeView(),
 
-      AppointmentsView(),
-            RecordsView(),
-            ProfileView(),
-          ];
+        ? [HomeView(), AppointmentsView(), RecordsView(), ProfileView()]
+         :[HomeView(),  ReservationsView(),PatientsView(), ProfileView()];
 
-    final List<BottomNavigationBarItem> items = isDoctor
+    final List<BottomNavigationBarItem> items = !isDoctor
         ? [
             BottomNavigationBarItem(
-              icon: CustomImageView(
-                imagePath: AssetsManager.home,
-              ),
-              activeIcon: CustomImageView(
-                imagePath: AssetsManager.homeActive,
-              ),
+              icon: CustomImageView(imagePath: AssetsManager.home),
+              activeIcon: CustomImageView(imagePath: AssetsManager.homeActive),
               label: 'layout.navBar.home'.tr(),
             ),
+      BottomNavigationBarItem(
+        icon: CustomImageView(imagePath: AssetsManager.appointments),
+        activeIcon: CustomImageView(
+          imagePath: AssetsManager.appointmentsActive,
+        ),
+        label: 'layout.navBar.appointments'.tr(),
+      ),
             BottomNavigationBarItem(
-              icon: CustomImageView(
-                imagePath: AssetsManager.patients,
-              ),
+              icon: CustomImageView(imagePath: AssetsManager.patients),
               activeIcon: CustomImageView(
                 imagePath: AssetsManager.patientsActive,
               ),
               label: 'layout.navBar.patients'.tr(),
             ),
+
             BottomNavigationBarItem(
-              icon: CustomImageView(
-                imagePath: AssetsManager.appointments,
-              ),
-              activeIcon: CustomImageView(
-                imagePath: AssetsManager.appointmentsActive,
-              ),
-              label: 'layout.navBar.appointments'.tr(),
-            ),
-            BottomNavigationBarItem(
-              icon: CustomImageView(
-                imagePath: AssetsManager.profile,
-              ),
+              icon: CustomImageView(imagePath: AssetsManager.profile),
               activeIcon: CustomImageView(
                 imagePath: AssetsManager.profileActive,
                 color: theme.primaryColor,
@@ -95,9 +78,7 @@ class _MainLayoutState extends State<MainLayout> {
               label: 'layout.navBar.home'.tr(),
             ),
             BottomNavigationBarItem(
-              icon: CustomImageView(
-                imagePath: AssetsManager.appointments,
-              ),
+              icon: CustomImageView(imagePath: AssetsManager.appointments),
               activeIcon: CustomImageView(
                 imagePath: AssetsManager.appointmentsActive,
                 color: theme.primaryColor,
@@ -129,19 +110,17 @@ class _MainLayoutState extends State<MainLayout> {
           ];
 
     return Scaffold(
+
       backgroundColor: theme.backgroundColor,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: IndexedStack(
-            index: _currentIndex,
-            children: views,
-          ),
+          child: IndexedStack(index: currentIndex, children: views),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (index) => setState(() => _currentIndex = index),
+        currentIndex: currentIndex,
+        onTap: (index) => context.read<LayoutViewModel>().changeIndex(index),
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
         items: items,

@@ -1,0 +1,94 @@
+import 'package:flutter/material.dart';
+import 'package:tabib_app/core/constant/assets_manager.dart';
+import 'package:tabib_app/core/extension/app_extension.dart';
+import 'package:tabib_app/features/patients/presentation/widgets/appointment_info_details.dart';
+import 'package:tabib_app/features/patients/presentation/widgets/expandable_section.dart';
+import 'package:tabib_app/features/patients/presentation/widgets/medical_note_card.dart';
+import 'package:tabib_app/features/patients/presentation/widgets/patient_info_card.dart';
+import 'package:tabib_app/features/patients/presentation/widgets/patient_info_details.dart';
+
+class PatientsAppointmentDetailsView extends StatelessWidget {
+  const PatientsAppointmentDetailsView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = context.appTheme;
+    return Scaffold(
+      backgroundColor: theme.backgroundColor,
+      appBar: AppBar(
+        backgroundColor: theme.whiteColor,
+        elevation: 0,
+        centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios, color: theme.textColor600, size: 20),
+          onPressed: () => Navigator.pop(context),
+        ),
+        title: Text(
+          "تفاصيل الحجز",
+          style: theme.bold18.copyWith(color: theme.textColor600),
+        ),
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            const PatientInfoCard(
+              name: "أ. أحمد رمضان",
+              id: "232345",
+            ),
+            const SizedBox(height: 16),
+            ExpandableSection(
+              title: "معلومات المريض",
+              backgroundColor:Color
+                (
+                  0xFFE9EBF1
+              )
+              ,
+              iconPath: AssetsManager.patientsActive,
+              child: const PatientInfoDetails(
+                gender: "أنثى",
+                birthDate: "1 يناير (26 سنة)",
+                height: "155 سم",
+                weight: "60 كيلو",
+              ),
+            ),
+            ExpandableSection(
+              title: "موعد الحجز",
+              backgroundColor:Color
+                (
+                  0xFFE9EBF1
+              )
+              ,
+              iconPath: AssetsManager.appointmentsActive,
+              child: const AppointmentInfoDetails(
+                date: "15 فبراير 2026",
+                time: "10:00 صباحاً",
+                day: "السبت",
+                month: "فبراير",
+                dayNumber: "15",
+              ),
+            ),
+            ExpandableSection(
+              title: "اعراض / شكوى المريض",
+              isExpanded: true,
+              backgroundColor: const Color(0xFFFEF9F0),
+              iconPath: AssetsManager.document,
+              child: const Column(
+                children: [
+                  MedicalNoteCard(
+                    note: "أفاد المريض بتحسن في التنفس، قياسات ذروة التدفق مستقرة. استمر في خطة العمل الحالية للربو.",
+                    date: "18 يناير، الاثنين • 10:30 م",
+                  ),
+                  MedicalNoteCard(
+                    note: "أفاد المريض بتحسن في التنفس، قياسات ذروة التدفق مستقرة. استمر في خطة العمل الحالية للربو.",
+                    date: "18 يناير، الاثنين • 10:30 م",
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

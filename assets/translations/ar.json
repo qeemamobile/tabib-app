@@ -85,7 +85,129 @@
       "appointments": "المواعيد",
       "profile": "الملف الشخصي",
       "reservations": "الحجوزات",
-      "records": "السجلات"
+      "records": "السجلات",
+      "messages": "الرسائل"
     }
+  },
+  "appointments": {
+    "confirmed": "مؤكد",
+    "specialties": "التخصصات",
+    "physiotherapy": "علاج طبيعي",
+    "injuryRehabilitation": "تأهيل الإصابات",
+    "motorRehabilitation": "إعادة التأهيل الحركي",
+    "drName": "د. أحمد رمضان",
+    "dateTime": "الثلاثاء 24.12.2025 | 5 مساءً"
+  },
+  "records": {
+    "title": "السجلات الطبية",
+    "summary": "الملخص:",
+    "download": "تحميل",
+    "view": "مشاهدة",
+    "filters": {
+      "all": "الكل",
+      "reports": "تقاريري",
+      "prescriptions": "وصفاتي الطبية",
+      "tests": "فحوصاتي"
+    },
+    "details": {
+      "title": "تفاصيل الوصفة",
+      "diagnosis": "التشخيص",
+      "medications": "الأدوية",
+      "rxNo": "رقم الروشتة:",
+      "dose": "الجرعة",
+      "frequency": "التكرار",
+      "duration": "المدة",
+      "timing": "التوقيت",
+      "bookFollowUp": "حجز موعد متابعة",
+      "downloadPDF": "تحميل PDF"
+    }
+  },
+  "home": {
+    "search": {
+      "title": "البحث",
+      "hint": "ابحث عن طبيب أو تخصص",
+      "specHint": "ابحث عن تخصص",
+      "specializations": "التخصصات",
+      "appointments": "موعد",
+      "currency": "ريال"
+    },
+    "doctorDetails": {
+      "title": "تفاصيل الطبيب",
+      "about": "نبذة عن الطبيب",
+      "certificates": "الشهادات",
+      "reviews": "آراء المرضى",
+      "selectDay": "اختر اليوم",
+      "price": "السعر",
+      "book": "حجز موعد",
+      "confirm": "تأكيد"
+    },
+    "appointmentDetails": {
+      "title": "تفاصيل الموعد",
+      "reviews": "مراجعة",
+      "years": "سنة",
+      "day": "اليوم",
+      "time": "الوقت",
+      "price": "السعر",
+      "cancel": "إلغاء",
+      "start": "بدء الموعد"
+    }
+  },
+  "profile": {
+    "title": "الملف الشخصي",
+    "personalInfo": "المعلومات الشخصية",
+    "personalSubtitle": "الاسم، الهوية، الهاتف، العمر",
+    "medicalProfile": "الملف الطبي",
+    "medicalSubtitle": "الأمراض المزمنة، الحساسية، الأدوية",
+    "settings": "الإعدادات",
+    "settingsSubtitle": "اللغة، الإشعارات، الخصوصية",
+    "years": "سنة",
+    "male": "ذكر",
+    "female": "أنثى"
+  },
+  "notifications": {
+    "title": "الإشعارات"
+  },
+  "chat": {
+    "title": "الرسائل",
+    "hint": "اكتب رسالتك هنا...",
+    "noMessages": "لا توجد رسائل بعد"
+  },
+  "reservations": {
+    "title": "الحجوزات",
+    "createReport": "إنشاء التقرير",
+    "visitInfo": "معلومات الزيارة",
+    "visitType": "نوع الزيارة",
+    "consultation": "استشارة",
+    "bloodPressure": "ضغط الدم",
+    "temperature": "درجة الحرارة",
+    "diagnosis": "التشخيص",
+    "finalDiagnosis": "التشخيص النهائي",
+    "diagnosisDetails": "تفاصيل التشخيص...",
+    "treatmentPlan": "الخطة العلاجية",
+    "addMedications": "إضافة الأدوية",
+    "itemName": "اسم الصنف",
+    "dose": "الجرعة",
+    "frequency": "التكرار",
+    "duration": "المدة",
+    "requiredTests": "الفحوصات المطلوبة",
+    "tests": "الفحوصات...",
+    "followUpDate": "موعد المتابعة",
+    "chooseDate": "اختر الموعد",
+    "medicalNotes": "الملاحظات الطبية",
+    "notes": "الملاحظات...",
+    "filters": {
+      "all": "الكل",
+      "confirm": "مؤكد",
+      "holding": "انتظار",
+      "completed": "مكتمل",
+      "cancel": "ملغى"
+    },
+    "addAppointment": "إضافة موعد",
+    "bookingDetails": "تفاصيل الحجز",
+    "startSession": "بدء الجلسة",
+    "confirmedNow": "مؤكدة - الآن",
+    "cardiologyConsultation": "استشارة قلب وأوعية دموية",
+    "createReportBtn": "انشاء تقرير",
+    "cancelBtn": "الغاء"
   }
 }

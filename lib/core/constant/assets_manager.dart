@@ -16,7 +16,11 @@ class AssetsManager {
   static const String profileActive = "$svgBase/active_profile.svg";
 
   static const String patients = "$svgBase/pations.svg";
-  static const String patientsActive = "$svgBase/pations.svg"; // Fallback if no specific active one
+  static const String patientsActive = "$svgBase/active_pations.svg";
+  static const String stethoscope = "$svgBase/stethoscope.svg";
+  static const String history = "$svgBase/history.svg";
+  static const String health = "$svgBase/health.svg";
+  static const String document = "$svgBase/document.svg";
 
   static const String appointments = "$svgBase/calendar-tick.svg";
   static const String appointmentsActive = "$svgBase/active_calendar-tick.svg";
@@ -29,6 +33,9 @@ class AssetsManager {
   static const String edit = "$svgBase/edit.svg";
   static const String video = "$svgBase/video.svg";
   static const String moneys = "$svgBase/moneys.svg";
+  static const String report = "$svgBase/report.svg";
+  static const String download = "$svgBase/download.svg";
+  static const String activeNotification = "$svgBase/notification_bing.svg";
 
   static const String security = "$svgBase/security_time.svg";
   static const String emptyWallet = "$svgBase/empty_wallet.svg";

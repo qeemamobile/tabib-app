@@ -5,18 +5,24 @@ import 'package:tabib_app/core/utilities/custom_image_view.dart';
 import '../../../../core/constant/assets_manager.dart';
 
 class SearchBarWidget extends StatelessWidget {
-  const SearchBarWidget({super.key});
+  final String? hintText;
+  final void Function()? onTap;
+  final bool ?readOnly;
+const SearchBarWidget({super.key, this.hintText, this.onTap, this.readOnly, });
 
 
   @override
   Widget build(BuildContext context) {
     final theme =context.appTheme;
+
     return TextField(
+      readOnly: readOnly??false,
       onTapUpOutside: (event){
         FocusScope.of(context).unfocus();
       },
+      onTap: onTap,
       decoration: InputDecoration(
-        hintText: 'search for doctor',
+        hintText: hintText ?? 'search for doctor',
         hintStyle: theme.regular14.copyWith(color: theme.textColor200),
         prefixIcon:CustomImageView(
           imagePath: AssetsManager.search,

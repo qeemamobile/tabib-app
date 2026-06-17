@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tabib_app/core/routes/routes.dart';
 import '../../widgets/ads_list.dart';
 import '../../widgets/header_special.dart';
 import '../../widgets/list_of_special_doc.dart';
@@ -14,7 +15,12 @@ class UserContent extends StatelessWidget {
       child: Column(
         spacing: 16,
         children: [
-          SearchBarWidget(),
+          SearchBarWidget(
+            readOnly: true,
+onTap: (){
+  Navigator.pushNamed(context, AppRoutes.searchView);
+},
+          ),
            MeetingSection(
 
            ),

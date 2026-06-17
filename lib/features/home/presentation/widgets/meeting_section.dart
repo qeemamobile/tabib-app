@@ -7,20 +7,17 @@ import '../../../../core/constant/assets_manager.dart';
 import 'avilable_doc.dart';
 
 class MeetingSection extends StatelessWidget {
-  const MeetingSection({super.key, });
+  const MeetingSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final theme=context.appTheme;
+    final theme = context.appTheme;
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(
-          side: BorderSide(
-            width: 0.50,
-            color: const Color(0xFFE8E9EC),
-          ),
+          side: BorderSide(width: 0.50, color: const Color(0xFFE8E9EC)),
           borderRadius: BorderRadius.circular(24),
         ),
         shadows: [
@@ -35,7 +32,7 @@ class MeetingSection extends StatelessWidget {
             blurRadius: 0,
             offset: Offset(0, -1),
             spreadRadius: 0,
-          )
+          ),
         ],
       ),
       child: Column(
@@ -46,8 +43,9 @@ class MeetingSection extends StatelessWidget {
         children: [
           CustomAppBarProfile(
             title: 'Your session starts now',
-            subTitle:'Your consultation with Dr. Ahmed Ramadan is now available.',
-trailing: AvailableDoc(),
+            subTitle:
+                'Your consultation with Dr. Ahmed Ramadan is now available.',
+            trailing: AvailableDoc(),
           ),
           Column(
             mainAxisSize: MainAxisSize.min,
@@ -77,10 +75,13 @@ trailing: AvailableDoc(),
                         spacing: 4,
                         children: [
                           Text(
-"appointment Details",
+                            "appointment Details",
                             textAlign: TextAlign.center,
-                            style: theme.bold12.copyWith(fontSize:14,color:theme.primaryColor500),
-                          )
+                            style: theme.bold12.copyWith(
+                              fontSize: 14,
+                              color: theme.primaryColor500,
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -101,14 +102,15 @@ trailing: AvailableDoc(),
                           crossAxisAlignment: CrossAxisAlignment.center,
                           spacing: 8,
                           children: [
-
                             Text(
                               'join now',
                               textAlign: TextAlign.center,
-                              style:theme.bold12.copyWith(fontSize:14,color:theme.whiteColor),
-
+                              style: theme.bold12.copyWith(
+                                fontSize: 14,
+                                color: theme.whiteColor,
+                              ),
                             ),
-                            CustomImageView(imagePath: AssetsManager.video,)
+                            CustomImageView(imagePath: AssetsManager.video),
                           ],
                         ),
                       ),
@@ -129,19 +131,20 @@ trailing: AvailableDoc(),
                 ),
               ),
 
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    spacing: 2,
-                    children: [
-                      Icon(Icons.access_time, color:theme.primaryColor300),
-                      Text(
-                        'You can enter five minutes before the appointment.',
-                        textAlign: TextAlign.center,
-                        style:theme.medium13.copyWith(color: theme.primaryColor300),
-                      ),
-                    ],
-                  )
-
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                spacing: 2,
+                children: [
+                  Icon(Icons.access_time, color: theme.primaryColor300),
+                  Text(
+                    'You can enter five minutes before the appointment.',
+                    textAlign: TextAlign.center,
+                    style: theme.medium13.copyWith(
+                      color: theme.primaryColor300,
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ],

@@ -85,7 +85,8 @@
       "appointments": "Appointments",
       "profile": "Profile",
       "reservations": "Reservations",
-      "records": "Records"
+      "records": "Records",
+      "messages": "Messages"
     }
   },
   "appointments": {
@@ -96,5 +97,117 @@
     "motorRehabilitation": "Motor Rehabilitation",
     "drName": "Dr. Ahmed Ramadan",
     "dateTime": "Tuesday 24.12.2025 | 5 PM"
+  },
+  "records": {
+    "title": "Medical Records",
+    "summary": "Summary:",
+    "download": "Download",
+    "view": "View",
+    "filters": {
+      "all": "All",
+      "reports": "Reports",
+      "prescriptions": "Prescriptions",
+      "tests": "Tests"
+    },
+    "details": {
+      "title": "Prescription Details",
+      "diagnosis": "Diagnosis",
+      "medications": "Medications",
+      "rxNo": "Prescription No:",
+      "dose": "Dose",
+      "frequency": "Frequency",
+      "duration": "Duration",
+      "timing": "Timing",
+      "bookFollowUp": "Book Follow-up",
+      "downloadPDF": "Download PDF"
+    }
+  },
+  "home": {
+    "search": {
+      "title": "Search",
+      "hint": "Search for doctor or specialty",
+      "specHint": "Search for specialization",
+      "specializations": "Specializations",
+      "appointments": "appointments",
+      "currency": "L.E."
+    },
+    "doctorDetails": {
+      "title": "Doctor Details",
+      "about": "About the Doctor",
+      "certificates": "Certificates",
+      "reviews": "Patient Reviews",
+      "selectDay": "Select Day",
+      "price": "Price",
+      "book": "Book Appointment",
+      "confirm": "Confirm"
+    },
+    "appointmentDetails": {
+      "title": "Appointment Details",
+      "reviews": "reviews",
+      "years": "years",
+      "day": "Day",
+      "time": "Time",
+      "price": "Price",
+      "cancel": "Cancel",
+      "start": "Start Appointment"
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "personalInfo": "Personal Information",
+    "personalSubtitle": "Name, ID, Phone, Age",
+    "medicalProfile": "Medical Profile",
+    "medicalSubtitle": "Chronic diseases, Allergies, Medications",
+    "settings": "Settings",
+    "settingsSubtitle": "Language, Notifications, Privacy",
+    "years": "Years",
+    "male": "Male",
+    "female": "Female"
+  },
+  "notifications": {
+    "title": "Notifications"
+  },
+  "chat": {
+    "title": "Messages",
+    "hint": "Type your message here...",
+    "noMessages": "No messages yet"
+  },
+  "reservations": {
+    "title": "Reservations",
+    "createReport": "Create Report",
+    "visitInfo": "Visit Information",
+    "visitType": "Visit Type",
+    "consultation": "Consultation",
+    "bloodPressure": "Blood Pressure",
+    "temperature": "Temperature",
+    "diagnosis": "Diagnosis",
+    "finalDiagnosis": "Final Diagnosis",
+    "diagnosisDetails": "Diagnosis details...",
+    "treatmentPlan": "Treatment Plan",
+    "addMedications": "Add Medications",
+    "itemName": "Item Name",
+    "dose": "Dose",
+    "frequency": "Frequency",
+    "duration": "Duration",
+    "requiredTests": "Required Tests",
+    "tests": "Tests...",
+    "followUpDate": "Follow-up Date",
+    "chooseDate": "Choose Date",
+    "medicalNotes": "Medical Notes",
+    "notes": "Notes...",
+    "filters": {
+      "all": "All",
+      "confirm": "Confirm",
+      "holding": "Holding",
+      "completed": "Completed",
+      "cancel": "Cancel"
+    },
+    "addAppointment": "Add Appointment",
+    "bookingDetails": "Booking Details",
+    "startSession": "Start Session",
+    "confirmedNow": "Confirmed - Now",
+    "cardiologyConsultation": "Cardiology & Vascular Consultation",
+    "createReportBtn": "Create Report",
+    "cancelBtn": "Cancel"
   }
 }
