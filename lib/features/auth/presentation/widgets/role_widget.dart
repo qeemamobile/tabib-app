@@ -5,7 +5,8 @@ import 'package:tabib_app/core/extension/app_extension.dart';
 import 'package:tabib_app/core/utilities/custom_image_view.dart';
 
 class RoleSelectionWidget extends StatefulWidget {
-  const RoleSelectionWidget({super.key});
+  final Function(String) onRoleChanged;
+  const RoleSelectionWidget({super.key, required this.onRoleChanged});
 
   @override
   State<RoleSelectionWidget> createState() => _RoleSelectionScreenState();
@@ -61,6 +62,7 @@ class _RoleSelectionScreenState extends State<RoleSelectionWidget> {
         setState(() {
           _selectedRole = id;
         });
+        widget.onRoleChanged(id);
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:tabib_app/core/constant/assets_manager.dart';
 import 'package:tabib_app/core/extension/app_extension.dart';
@@ -33,10 +34,18 @@ class PatientInfoCard extends StatelessWidget {
         ],
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
+           CustomImageView(
+            imagePath: imagePath ?? AssetsManager.user,
+            height: 60,
+            width: 60,
+            radius: BorderRadius.circular(30),
+          ),
+          const SizedBox(width: 12),
+
           Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 name,
@@ -44,18 +53,12 @@ class PatientInfoCard extends StatelessWidget {
               ),
               const SizedBox(height: 4),
               Text(
-                "ID: #$id",
+                "${'patients.details.id'.tr()}: #$id",
                 style: theme.regular14.copyWith(color: theme.textColor300),
               ),
             ],
           ),
-          const SizedBox(width: 12),
-          CustomImageView(
-            imagePath: imagePath ?? AssetsManager.user,
-            height: 60,
-            width: 60,
-            radius: BorderRadius.circular(30),
-          ),
+         
         ],
       ),
     );

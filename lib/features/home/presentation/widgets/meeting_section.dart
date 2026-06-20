@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:tabib_app/core/extension/app_extension.dart';
 import 'package:tabib_app/core/utilities/custom_image_view.dart';
@@ -42,9 +43,10 @@ class MeetingSection extends StatelessWidget {
         spacing: 16,
         children: [
           CustomAppBarProfile(
-            title: 'Your session starts now',
-            subTitle:
-                'Your consultation with Dr. Ahmed Ramadan is now available.',
+            title: "home.doctor.sessionStartsNow".tr(),
+            subTitle: "home.doctor.sessionDescription".tr(
+              args: ["Dr. Ahmed Ramadan"],
+            ),
             trailing: AvailableDoc(),
           ),
           Column(
@@ -61,30 +63,6 @@ class MeetingSection extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   spacing: 10,
                   children: [
-                    Container(
-                      height: 40,
-                      decoration: ShapeDecoration(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(40),
-                        ),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        spacing: 4,
-                        children: [
-                          Text(
-                            "appointment Details",
-                            textAlign: TextAlign.center,
-                            style: theme.bold12.copyWith(
-                              fontSize: 14,
-                              color: theme.primaryColor500,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
                     Expanded(
                       child: Container(
                         height: 40,
@@ -103,7 +81,7 @@ class MeetingSection extends StatelessWidget {
                           spacing: 8,
                           children: [
                             Text(
-                              'join now',
+                              "home.doctor.joinNow".tr(),
                               textAlign: TextAlign.center,
                               style: theme.bold12.copyWith(
                                 fontSize: 14,
@@ -113,6 +91,31 @@ class MeetingSection extends StatelessWidget {
                             CustomImageView(imagePath: AssetsManager.video),
                           ],
                         ),
+                      ),
+                    ),
+                    Container(
+                      height: 40,
+                      decoration: ShapeDecoration(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(40),
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        spacing: 4,
+                        children: [
+                          CustomImageView(imagePath: AssetsManager.report),
+                          Text(
+                            "home.doctor.appointmentDetails".tr(),
+                            textAlign: TextAlign.center,
+                            style: theme.bold12.copyWith(
+                              fontSize: 14,
+                              color: theme.primaryColor500,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -130,14 +133,13 @@ class MeetingSection extends StatelessWidget {
                   ),
                 ),
               ),
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 spacing: 2,
                 children: [
                   Icon(Icons.access_time, color: theme.primaryColor300),
                   Text(
-                    'You can enter five minutes before the appointment.',
+                    "home.doctor.entryHint".tr(),
                     textAlign: TextAlign.center,
                     style: theme.medium13.copyWith(
                       color: theme.primaryColor300,

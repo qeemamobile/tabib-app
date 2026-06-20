@@ -23,10 +23,7 @@ import '../../features/notification/presentation/views/notification_view.dart';
 import '../../features/patients/presentation/views/patient_appointment_details_view.dart';
 import '../../features/records/presentation/views/prescription_details_view.dart';
 
-enum RoleAccount { user, doc }
-
 class Routes {
-  static final RoleAccount role = RoleAccount.doc;
   static Route? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case AppRoutes.welcomeView:
@@ -38,13 +35,13 @@ class Routes {
       case AppRoutes.roleView:
         return MaterialPageRoute(builder: (context) => const RoleView());
       case AppRoutes.mainLayoutView:
+        final role = settings.arguments as String? ?? "user";
         return MaterialPageRoute(
-            builder: (context) => BlocProvider(
-  create: (context) => getIt<LayoutViewModel>(),
-  child: MainLayout(
-                  role: role.toString(),
-                ),
-));
+          builder: (context) => BlocProvider(
+            create: (context) => getIt<LayoutViewModel>(),
+            child: MainLayout(role: role),
+          ),
+        );
       case AppRoutes.prescriptionDetailsView:
         return MaterialPageRoute(
             builder: (context) => const PrescriptionDetailsView());
@@ -54,40 +51,40 @@ class Routes {
       case AppRoutes.searchView:
         return MaterialPageRoute(builder: (context) => const SearchView());
       case AppRoutes.notificationView:
-        return MaterialPageRoute(builder: (context) => const NotificationView());
+        return MaterialPageRoute(
+            builder: (context) => const NotificationView());
       case AppRoutes.doctorDetailsView:
         return MaterialPageRoute(
             builder: (context) => const DoctorDetailsView());
       case AppRoutes.chatListView:
         return MaterialPageRoute(builder: (context) => const ChatListView());
       case AppRoutes.chatDetailsView:
-        return MaterialPageRoute(
-            builder: (context) => const ChatDetailsView());
+        return MaterialPageRoute(builder: (context) => const ChatDetailsView());
       case AppRoutes.patientDetailsView:
         return MaterialPageRoute(
             builder: (context) => const PatientDetailsView());
-        case AppRoutes.patientsAppointmentDetailsView:
+      case AppRoutes.patientsAppointmentDetailsView:
         return MaterialPageRoute(
             builder: (context) => const PatientsAppointmentDetailsView());
       case AppRoutes.createReportView:
         return MaterialPageRoute(
             builder: (context) => const CreateReportView());
       case AppRoutes.completeProfileView:
-        switch (role) {
-          case RoleAccount.user:
-            return MaterialPageRoute(
-              builder: (context) => BlocProvider(
-                create: (context) => getIt<CompleteUserProfileCubit>(),
-                child: const CompleteUserProfileView(),
-              ),
-            );
-          case RoleAccount.doc:
-            return MaterialPageRoute(
-              builder: (context) => BlocProvider(
-                create: (context) => getIt<CompleteDocProfileCubit>(),
-                child: const CompleteDocProfileView(),
-              ),
-            );
+        final role = settings.arguments as String? ?? "user";
+        if (role == "user") {
+          return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+              create: (context) => getIt<CompleteUserProfileCubit>(),
+              child: const CompleteUserProfileView(),
+            ),
+          );
+        } else {
+          return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+              create: (context) => getIt<CompleteDocProfileCubit>(),
+              child: const CompleteDocProfileView(),
+            ),
+          );
         }
 
       default:

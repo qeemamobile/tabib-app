@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/extension/app_extension.dart';
@@ -27,7 +28,7 @@ class AcceptDoctorBtn extends StatelessWidget {
               spacing: 5,
               children: [
                 Text(
-                  'accept',
+                  "common.accept".tr(),
                   textAlign: TextAlign.center,
                   style: theme.bold12.copyWith(fontSize: 14, color: Colors.white),
                 ),
@@ -48,7 +49,7 @@ class AcceptDoctorBtn extends StatelessWidget {
               spacing: 5,
               children: [
                 Text(
-                  "close",
+                  "common.close".tr(),
                   textAlign: TextAlign.center,
                   style: theme.bold12.copyWith(
                     fontSize: 14,

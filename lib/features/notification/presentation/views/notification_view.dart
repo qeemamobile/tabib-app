@@ -27,10 +27,10 @@ class NotificationView extends StatelessWidget {
         itemCount: 3,
         separatorBuilder: (context, index) => const SizedBox(height: 16),
         itemBuilder: (context, index) {
-          return const NotificationCard(
-            title: 'Appointment Reminder',
-            description: 'Your appointment with Dr. Mohamed tomorrow at 3:00 PM',
-            time: '5 minutes ago',
+          return NotificationCard(
+            title: 'notifications.reminderTitle'.tr(),
+            description: 'notifications.reminderDescription'.tr(args: ['Dr. Mohamed', '3:00 PM']),
+            time: 'notifications.timeAgo'.tr(args: ['5']),
           );
         },
       ),

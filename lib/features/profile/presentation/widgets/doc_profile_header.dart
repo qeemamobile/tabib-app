@@ -25,7 +25,6 @@ class DocProfileHeader extends StatelessWidget {
         CustomImageView(
           imagePath: imagePath ?? AssetsManager.doctor,
           height: 380,
-          width: double.infinity,
           fit: BoxFit.cover,
         ),
         Container(
@@ -44,7 +43,7 @@ class DocProfileHeader extends StatelessWidget {
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       doctorName,

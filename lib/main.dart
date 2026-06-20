@@ -13,7 +13,7 @@ void main() async {
       supportedLocales: const [Locale('ar'), Locale('en')],
       path: 'assets/translations',
       fallbackLocale: const Locale('en'),
-      startLocale: const Locale('en'),
+      startLocale: const Locale('ar'),
       child: const TabibApp(),
     ),
   );

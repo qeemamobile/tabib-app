@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:tabib_app/core/constant/assets_manager.dart';
 import 'package:tabib_app/features/profile/presentation/widgets/doc_profile_header.dart';
@@ -12,28 +13,28 @@ class DocProfileContent extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          const DocProfileHeader(
-            doctorName: 'Dr. Ahmed Ramadan',
-            doctorTitle: 'Orthopedic & Sports Medicine Consultant',
+          DocProfileHeader(
+            doctorName: 'appointments.drName'.tr(),
+            doctorTitle: 'profile.doctor.orthopedicConsultant'.tr(),
           ),
           Column(
             children: [
               _buildStatsRow(),
               const SizedBox(height: 24),
               ProfileMenuItem(
-                title: 'Personal Information',
+                title: 'profile.personalInfo'.tr(),
                 icon: Icons.person_outline,
                 onTap: () {},
               ),
               const SizedBox(height: 12),
               ProfileMenuItem(
-                title: 'Settings',
+                title: 'profile.settings'.tr(),
                 icon: Icons.settings_outlined,
                 onTap: () {},
               ),
               const SizedBox(height: 12),
               ProfileMenuItem(
-                title: 'Experiences',
+                title: 'profile.experiences'.tr(),
                 icon: Icons.work_outline,
                 onTap: () {},
               ),
@@ -45,29 +46,29 @@ class DocProfileContent extends StatelessWidget {
   }
 
   Widget _buildStatsRow() {
-    return const Row(
+    return Row(
       children: [
         Expanded(
           child: DocStatCard(
-            title: 'Earnings',
+            title: 'profile.doctor.earnings'.tr(),
             value: '2,500',
             icon: AssetsManager.moneys,
-            valueColor: Color(0xFF4CAF50),
-            prefixValue: 'SAR ',
+            valueColor: const Color(0xFF4CAF50),
+            prefixValue: '${'common.currency'.tr()} ',
           ),
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
         Expanded(
           child: DocStatCard(
-            title: 'Patients',
+            title: 'profile.doctor.patients'.tr(),
             value: '36',
             icon: AssetsManager.profile,
           ),
         ),
-        SizedBox(width: 12),
+        const SizedBox(width: 12),
         Expanded(
           child: DocStatCard(
-            title: 'Ratings',
+            title: 'profile.doctor.ratings'.tr(),
             value: '4.3',
             icon: AssetsManager.edit,
             showStars: true,

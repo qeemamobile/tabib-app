@@ -56,7 +56,11 @@ class _ExpandableSectionState extends State<ExpandableSection> {
               _isExpanded = value;
             });
           },
-          trailing: widget.iconPath != null
+          trailing:Icon(
+            _isExpanded ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
+            color: theme.textColor300,
+          ),
+          leading:  widget.iconPath != null
               ?
             Container(
               padding: const EdgeInsets.all(4),
@@ -69,10 +73,6 @@ class _ExpandableSectionState extends State<ExpandableSection> {
                   ),
               )
               : null,
-          leading: Icon(
-            _isExpanded ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
-            color: theme.textColor300,
-          ),
           title: Text(
             widget.title,
             textAlign: TextAlign.end,
@@ -83,7 +83,6 @@ class _ExpandableSectionState extends State<ExpandableSection> {
           ),
           children: [
             Container(
-              width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: theme.textColor100.withOpacity(0.05),

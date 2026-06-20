@@ -89,6 +89,14 @@
       "messages": "الرسائل"
     }
   },
+  "common": {
+    "more": "المزيد",
+    "accept": "قبول",
+    "close": "إغلاق",
+    "cancel": "إلغاء",
+    "availableNow": "متاح الآن",
+    "currency": "ريال"
+  },
   "appointments": {
     "confirmed": "مؤكد",
     "specialties": "التخصصات",
@@ -96,7 +104,15 @@
     "injuryRehabilitation": "تأهيل الإصابات",
     "motorRehabilitation": "إعادة التأهيل الحركي",
     "drName": "د. أحمد رمضان",
-    "dateTime": "الثلاثاء 24.12.2025 | 5 مساءً"
+    "dateTime": "الثلاثاء 24.12.2025 | 5 مساءً",
+    "filters": {
+      "all": "الكل",
+      "confirm": "مؤكد",
+      "holding": "انتظار",
+      "completed": "مكتمل",
+      "cancel": "ملغى"
+    },
+    "addAppointment": "إضافة موعد"
   },
   "records": {
     "title": "السجلات الطبية",
@@ -123,6 +139,10 @@
     }
   },
   "home": {
+    "appBar": {
+      "title": "مرحبا بك",
+      "subtitle": "اليك نظرة سريعة على يومك"
+    },
     "search": {
       "title": "البحث",
       "hint": "ابحث عن طبيب أو تخصص",
@@ -150,6 +170,22 @@
       "price": "السعر",
       "cancel": "إلغاء",
       "start": "بدء الموعد"
+    },
+    "doctor": {
+      "appointmentsToday": "مواعيد اليوم",
+      "pendingRequests": "طلبات معلقة",
+      "profitsToday": "أرباح اليوم",
+      "completeConsultations": "استشارات مكتملة",
+      "sessionStartsNow": "جلستك تبدأ الآن",
+      "sessionDescription": "استشارتك مع {} متاحة الآن.",
+      "appointmentDetails": "تفاصيل الموعد",
+      "joinNow": "انضم الآن",
+      "entryHint": "يمكنك الدخول قبل الموعد بخمس دقائق.",
+      "reviewRequests": "طلبات تحتاج مراجعة ({})",
+      "more": "المزيد"
+    },
+    "user": {
+      "fastSpecializations": "التخصصات السريعة"
     }
   },
   "profile": {
@@ -162,10 +198,20 @@
     "settingsSubtitle": "اللغة، الإشعارات، الخصوصية",
     "years": "سنة",
     "male": "ذكر",
-    "female": "أنثى"
+    "female": "أنثى",
+    "experiences": "الخبرات",
+    "doctor": {
+      "earnings": "الأرباح",
+      "patients": "المرضى",
+      "ratings": "التقييمات",
+      "orthopedicConsultant": "استشاري جراحة العظام والطب الرياضي"
+    }
   },
   "notifications": {
-    "title": "الإشعارات"
+    "title": "الإشعارات",
+    "reminderTitle": "تذكير بالموعد",
+    "reminderDescription": "موعدك مع {} غدًا في {}",
+    "timeAgo": "منذ {} دقائق"
   },
   "chat": {
     "title": "الرسائل",
@@ -209,5 +255,37 @@
     "cardiologyConsultation": "استشارة قلب وأوعية دموية",
     "createReportBtn": "انشاء تقرير",
     "cancelBtn": "الغاء"
+  },
+  "patients": {
+    "filters": {
+      "all": "الكل",
+      "lastVisit": "اخر زيارة",
+      "needReview": "يحتاج مراجعة",
+      "stable": "مستقر"
+    },
+    "details": {
+      "title": "ملف المريض",
+      "patientInfo": "معلومات المريض",
+      "medicalOverview": "نظرة عامة طبية",
+      "visitHistory": "سجل الزيارات",
+      "latestExaminations": "آخر الفحوصات",
+      "medicalNotes": "الملاحظات الطبية",
+      "gender": "النوع",
+      "birthDate": "تاريخ الميلاد",
+      "height": "الطول",
+      "weight": "الوزن",
+      "cm": "سم",
+      "kg": "كيلو",
+      "previousDiagnoses": "التشخيصات السابقة",
+      "highBloodPressure": "ضغط مرتفع",
+      "asthma": "ربو",
+      "bloodGroup": "فصيلة الدم",
+      "allergies": "الحساسية",
+      "penicillin": "البنسلين",
+      "latex": "اللاتكس",
+      "viewDetails": "عرض التفاصيل",
+      "id": "ID",
+      "dummyNotes": "هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها."
+    }
   }
 }

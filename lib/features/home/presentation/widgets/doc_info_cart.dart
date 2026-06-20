@@ -1,13 +1,15 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:tabib_app/core/utilities/custom_image_view.dart';
 import '../../../../core/constant/assets_manager.dart';
 import '../../../../core/extension/app_extension.dart';
+
 class DocDashboard extends StatelessWidget {
   const DocDashboard({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return    Column(
+    return Column(
       spacing: 6,
       children: [
         Row(
@@ -15,7 +17,7 @@ class DocDashboard extends StatelessWidget {
           children: [
             Expanded(
               child: DashboardCard(
-                title: "Today's appointments",
+                title: "home.doctor.appointmentsToday".tr(),
                 value: '12',
                 icon: AssetsManager.appointmentsActive,
                 iconBackgroundColor: const Color(0xFFE9EBF1),
@@ -23,7 +25,7 @@ class DocDashboard extends StatelessWidget {
             ),
             Expanded(
               child: DashboardCard(
-                title: "Pending requests",
+                title: "home.doctor.pendingRequests".tr(),
                 value: '12',
                 icon: AssetsManager.security,
                 iconBackgroundColor: const Color(0xFFFEF9F0),
@@ -34,22 +36,22 @@ class DocDashboard extends StatelessWidget {
         Row(
           spacing: 6,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
           children: [
+          
             Expanded(
               child: DashboardCard(
-                title: "Today's profits",
-                value: '12',
-                icon: AssetsManager.emptyWallet,
-                iconBackgroundColor: const Color(0xFFE4FFEB),
-              ),
-            ),
-            Expanded(
-              child: DashboardCard(
-                title: "Complete consultations",
+                title: "home.doctor.completeConsultations".tr(),
                 value: '12',
                 icon: AssetsManager.tickCircle,
                 iconBackgroundColor: const Color(0xFFEAF8F6),
+              ),
+            ),
+              Expanded(
+              child: DashboardCard(
+                title: "home.doctor.profitsToday".tr(),
+                value: '12',
+                icon: AssetsManager.emptyWallet,
+                iconBackgroundColor: const Color(0xFFE4FFEB),
               ),
             ),
           ],
@@ -68,10 +70,10 @@ class DashboardCard extends StatelessWidget {
 
   const DashboardCard({
     super.key,
-    required  this.title,
-    required  this.value,
-    required  this.icon,
-    required  this.iconBackgroundColor,
+    required this.title,
+    required this.value,
+    required this.icon,
+    required this.iconBackgroundColor,
     this.valueColor = const Color(0xFF1E3A8A),
   });
 
@@ -100,26 +102,27 @@ class DashboardCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.end, 
             children: [
-              Expanded(
-                child: Text(
-                  title,
-                  style: theme.bold24.copyWith(fontSize: 14),
-                  textAlign: TextAlign.end,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                ),
-              ),
-              const SizedBox(width: 12),
-              Container(
+               Container(
                 padding: const EdgeInsets.all(6),
                 decoration: BoxDecoration(
                   color: iconBackgroundColor,
                   borderRadius: BorderRadius.circular(14),
                 ),
-                child: CustomImageView(imagePath: icon)
+                child: CustomImageView(imagePath: icon),
               ),
+              SizedBox(width: 12),
+                            
+              Expanded(
+                child: Text(
+                  title,
+                  style: theme.bold24.copyWith(fontSize: 14),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+
+             
             ],
           ),
           const SizedBox(height: 8),

@@ -17,7 +17,10 @@ class DocContent extends StatelessWidget {
           SearchBarWidget(),
           DocDashboard(),
           MeetingSection(),
-          HeaderSpecial(title: "Requests requiring review (2)"),
+          HeaderSpecial(
+            title: "home.doctor.reviewRequests",
+            titleArgs: ["2"],
+          ),
           RequestReviewDocCard(),
         ],
       ),

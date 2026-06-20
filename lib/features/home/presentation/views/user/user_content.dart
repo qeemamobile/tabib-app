@@ -26,7 +26,10 @@ onTap: (){
            ),
            AutoMovingAdsCarousel(),
            HeaderSpecial(
-             title: "Fast specializations",
+             title: "home.user.fastSpecializations",
+             onSeeMoreClicked: () {
+              Navigator.pushNamed(context, AppRoutes.seeMoreSpecializationView);
+             },
            ),
            ListOfSpecialDoc(),
            SizedBox(),

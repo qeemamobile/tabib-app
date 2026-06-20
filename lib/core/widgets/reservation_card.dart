@@ -51,12 +51,18 @@ class ReservationCard extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildStatusBadge(theme),
-              const Spacer(),
+                CustomImageView(
+                imagePath: imageUrl ?? AssetsManager.doctor,
+                height: 64,
+                width: 64,
+                radius: BorderRadius.circular(32),
+              ),
+              const SizedBox(width: 12),
+              
               Expanded(
                 flex: 4,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
@@ -74,33 +80,30 @@ class ReservationCard extends StatelessWidget {
                     const SizedBox(height: 8),
                     showTime || time != null
                         ? Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
+                                 Icon(
+                                Icons.access_time,
+                                size: 18,
+                                color: theme.textColor300,
+                              ),
+                               const SizedBox(width: 4),
                               Text(
                                 time!,
                                 style: theme.regular14.copyWith(
                                   color: theme.textColor300,
                                 ),
                               ),
-                              const SizedBox(width: 4),
-                              Icon(
-                                Icons.access_time,
-                                size: 18,
-                                color: theme.textColor300,
-                              ),
+                             
+                           
                             ],
                           )
                         : const SizedBox(),
                   ],
                 ),
               ),
-              const SizedBox(width: 12),
-              CustomImageView(
-                imagePath: imageUrl ?? AssetsManager.doctor,
-                height: 64,
-                width: 64,
-                radius: BorderRadius.circular(32),
-              ),
+              _buildStatusBadge(theme),
+            
             ],
           ),
           const SizedBox(height: 16),

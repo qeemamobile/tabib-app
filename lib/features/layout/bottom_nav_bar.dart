@@ -22,42 +22,66 @@ class MainLayout extends StatefulWidget {
 }
 
 class _MainLayoutState extends State<MainLayout> {
-
   @override
   Widget build(BuildContext context) {
-    final bool isDoctor = widget.role == 'doc';
+    final bool isDoctor = widget.role == 'doctor' || widget.role == 'doc';
     final theme = context.appTheme;
-    final currentIndex=context.watch<LayoutViewModel>().state;
+    final currentIndex = context.watch<LayoutViewModel>().state;
 
     final List<Widget> views = isDoctor
+        ? [
+            HomeView(role: widget.role),
+            const ReservationsView(),
+            const PatientsView(),
+            ProfileView(role: widget.role),
+          ]
+        : [
+            HomeView(role: widget.role),
+            const AppointmentsView(),
+            const RecordsView(),
+            ProfileView(role: widget.role),
+          ];
 
-        ? [HomeView(), AppointmentsView(), RecordsView(), ProfileView()]
-         :[HomeView(),  ReservationsView(),PatientsView(), ProfileView()];
-
-    final List<BottomNavigationBarItem> items = !isDoctor
+    final List<BottomNavigationBarItem> items = isDoctor
         ? [
             BottomNavigationBarItem(
-              icon: CustomImageView(imagePath: AssetsManager.home),
-              activeIcon: CustomImageView(imagePath: AssetsManager.homeActive),
+              icon: CustomImageView(
+                imagePath: AssetsManager.home,
+                color: theme.textColor300,
+              ),
+              activeIcon: CustomImageView(
+                imagePath: AssetsManager.homeActive,
+                color: theme.primaryColor,
+              ),
               label: 'layout.navBar.home'.tr(),
             ),
-      BottomNavigationBarItem(
-        icon: CustomImageView(imagePath: AssetsManager.appointments),
-        activeIcon: CustomImageView(
-          imagePath: AssetsManager.appointmentsActive,
-        ),
-        label: 'layout.navBar.appointments'.tr(),
-      ),
             BottomNavigationBarItem(
-              icon: CustomImageView(imagePath: AssetsManager.patients),
+              icon: CustomImageView(
+                imagePath: AssetsManager.appointments,
+                color: theme.textColor300,
+              ),
+              activeIcon: CustomImageView(
+                imagePath: AssetsManager.appointmentsActive,
+                color: theme.primaryColor,
+              ),
+              label: 'layout.navBar.reservations'.tr(),
+            ),
+            BottomNavigationBarItem(
+              icon: CustomImageView(
+                imagePath: AssetsManager.patients,
+                color: theme.textColor300,
+              ),
               activeIcon: CustomImageView(
                 imagePath: AssetsManager.patientsActive,
+                color: theme.primaryColor,
               ),
               label: 'layout.navBar.patients'.tr(),
             ),
-
             BottomNavigationBarItem(
-              icon: CustomImageView(imagePath: AssetsManager.profile),
+              icon: CustomImageView(
+                imagePath: AssetsManager.profile,
+                color: theme.textColor300,
+              ),
               activeIcon: CustomImageView(
                 imagePath: AssetsManager.profileActive,
                 color: theme.primaryColor,
@@ -78,12 +102,15 @@ class _MainLayoutState extends State<MainLayout> {
               label: 'layout.navBar.home'.tr(),
             ),
             BottomNavigationBarItem(
-              icon: CustomImageView(imagePath: AssetsManager.appointments),
+              icon: CustomImageView(
+                imagePath: AssetsManager.appointments,
+                color: theme.textColor300,
+              ),
               activeIcon: CustomImageView(
                 imagePath: AssetsManager.appointmentsActive,
                 color: theme.primaryColor,
               ),
-              label: 'layout.navBar.reservations'.tr(),
+              label: 'layout.navBar.appointments'.tr(),
             ),
             BottomNavigationBarItem(
               icon: CustomImageView(
@@ -110,7 +137,6 @@ class _MainLayoutState extends State<MainLayout> {
           ];
 
     return Scaffold(
-
       backgroundColor: theme.backgroundColor,
       body: SafeArea(
         child: Padding(

@@ -7,8 +7,15 @@ import 'package:tabib_app/core/routes/routes.dart';
 import 'package:tabib_app/core/utilities/custom_image_view.dart';
 import 'package:tabib_app/features/auth/presentation/widgets/role_widget.dart';
 
-class RoleView extends StatelessWidget {
+class RoleView extends StatefulWidget {
   const RoleView({super.key});
+
+  @override
+  State<RoleView> createState() => _RoleViewState();
+}
+
+class _RoleViewState extends State<RoleView> {
+  String _selectedRole = 'user';
 
   @override
   Widget build(BuildContext context) {
@@ -57,14 +64,30 @@ class RoleView extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 10),
-                  const RoleSelectionWidget(),
-                  const Spacer(), ElevatedButton(
+                  RoleSelectionWidget(
+                    onRoleChanged: (role) {
+                      setState(() {
+                        _selectedRole = role;
+                      });
+                    },
+                  ),
+                  const Spacer(),
+                  SizedBox(
+
+                    child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamedAndRemoveUntil(context, AppRoutes.completeProfileView, (route) => false);
+                        // Navigating to MainLayoutView for demonstration, 
+                        // usually goes to complete profile first.
+                        Navigator.pushNamedAndRemoveUntil(
+                          context,
+                          AppRoutes.mainLayoutView,
+                          (route) => false,
+                          arguments: _selectedRole,
+                        );
                       },
                       child: Text("auth.login.loginButton".tr()),
                     ),
-
+                  ),
                   const SizedBox(height: 8),
                   const Center(child: HaveAccount()),
                   const SizedBox(height: 20),
@@ -99,7 +122,8 @@ class HaveAccount extends StatelessWidget {
             ),
             recognizer: TapGestureRecognizer()
               ..onTap = () {
-                Navigator.pushNamedAndRemoveUntil(context, AppRoutes.loginView, (route) => false);
+                Navigator.pushNamedAndRemoveUntil(
+                    context, AppRoutes.loginView, (route) => false);
               },
           ),
         ],

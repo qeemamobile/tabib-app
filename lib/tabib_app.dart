@@ -10,14 +10,13 @@ class TabibApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-debugShowCheckedModeBanner: false,
-
+      debugShowCheckedModeBanner: false,
       title: 'Tabib App',
-       localizationsDelegates: context.localizationDelegates,
+      localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
       onGenerateRoute: Routes.onGenerateRoute,
-      initialRoute: AppRoutes.mainLayoutView,
+      initialRoute: AppRoutes.roleView,
       theme: LightTheme().themeData,
     );
   }

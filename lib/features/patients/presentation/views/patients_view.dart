@@ -1,10 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:tabib_app/core/extension/app_extension.dart';
 import 'package:tabib_app/core/constant/assets_manager.dart';
 import '../../../../core/routes/routes.dart';
-import '../../../../core/widgets/calendar_section.dart';
 import '../../../../core/widgets/filter_chips.dart';
-import '../../../home/presentation/widgets/request_review_doc.dart';
 import '../../../../core/widgets/reservation_card.dart';
 import '../../../home/presentation/widgets/search_bar_widget.dart';
 
@@ -27,7 +26,12 @@ class _PatientsViewState extends State<PatientsView> {
         SearchBarWidget(),
         const SizedBox(height: 26),
         FilterChips(
-          filters: const ["all", "last visit", "need review", "stable"],
+          filters:  [
+            "patients.filters.all".tr(),
+            "patients.filters.lastVisit".tr(),
+            "patients.filters.needReview".tr(),
+            "patients.filters.stable".tr(),
+          ],
           onSelected: (index) {
             switch (index) {
               case 0:

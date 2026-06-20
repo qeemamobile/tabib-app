@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:tabib_app/core/extension/app_extension.dart';
 import 'package:tabib_app/core/constant/assets_manager.dart';
@@ -25,7 +26,13 @@ class _ReservationsViewState extends State<ReservationsView> {
       children: [
         const SizedBox(height: 26),
         FilterChips(
-          filters: const ["all", "confirm", "holding", "completed", "cancel"],
+          filters:  [
+            "appointments.filters.all".tr(),
+            "appointments.filters.confirm".tr(),
+            "appointments.filters.holding".tr(),
+            "appointments.filters.completed".tr(),
+            "appointments.filters.cancel".tr(),
+            ],
           onSelected: (index) {
             switch (index) {
               case 0:
@@ -62,7 +69,7 @@ class _ReservationsViewState extends State<ReservationsView> {
               ),
             ),
             onPressed: () {},
-            label: const Text("add Appointment"),
+            label:  Text("appointments.addAppointment".tr()),
             icon: const Icon(Icons.add_circle_outline),
           ),
         ],
@@ -80,6 +87,12 @@ class _ReservationsViewState extends State<ReservationsView> {
                   subTitle: "استشارة قلب وأوعية دموية",
                   time: "08:30 م",
                   actions: [
+                     ReservationActionButton(
+                      label: "بدء الجلسة",
+                      iconPath: AssetsManager.video,
+                      isFilled: true,
+                      onTap: () {},
+                    ),
                     ReservationActionButton(
                       label: "تفاصيل الحجز",
                       iconPath: AssetsManager.records,
@@ -87,12 +100,7 @@ class _ReservationsViewState extends State<ReservationsView> {
                         Navigator.of(context).pushNamed(AppRoutes.patientsAppointmentDetailsView);
                       },
                     ),
-                    ReservationActionButton(
-                      label: "بدء الجلسة",
-                      iconPath: AssetsManager.video,
-                      isFilled: true,
-                      onTap: () {},
-                    ),
+                   
                   ],
                 );
               },

@@ -89,6 +89,14 @@
       "messages": "Messages"
     }
   },
+  "common": {
+    "more": "More",
+    "accept": "Accept",
+    "close": "Close",
+    "cancel": "Cancel",
+    "availableNow": "Available now",
+    "currency": "SAR"
+  },
   "appointments": {
     "confirmed": "Confirmed",
     "specialties": "Specialties",
@@ -150,6 +158,22 @@
       "price": "Price",
       "cancel": "Cancel",
       "start": "Start Appointment"
+    },
+    "doctor": {
+      "appointmentsToday": "Today's appointments",
+      "pendingRequests": "Pending requests",
+      "profitsToday": "Today's profits",
+      "completeConsultations": "Complete consultations",
+      "sessionStartsNow": "Your session starts now",
+      "sessionDescription": "Your consultation with {} is now available.",
+      "appointmentDetails": "Appointment Details",
+      "joinNow": "Join Now",
+      "entryHint": "You can enter five minutes before the appointment.",
+      "reviewRequests": "Requests requiring review ({})",
+      "more": "More"
+    },
+    "user": {
+      "fastSpecializations": "Quick Specializations"
     }
   },
   "profile": {
@@ -162,10 +186,20 @@
     "settingsSubtitle": "Language, Notifications, Privacy",
     "years": "Years",
     "male": "Male",
-    "female": "Female"
+    "female": "Female",
+    "experiences": "Experiences",
+    "doctor": {
+      "earnings": "Earnings",
+      "patients": "Patients",
+      "ratings": "Ratings",
+      "orthopedicConsultant": "Orthopedic & Sports Medicine Consultant"
+    }
   },
   "notifications": {
-    "title": "Notifications"
+    "title": "Notifications",
+    "reminderTitle": "Appointment Reminder",
+    "reminderDescription": "Your appointment with {} tomorrow at {}",
+    "timeAgo": "{} minutes ago"
   },
   "chat": {
     "title": "Messages",
@@ -209,5 +243,31 @@
     "cardiologyConsultation": "Cardiology & Vascular Consultation",
     "createReportBtn": "Create Report",
     "cancelBtn": "Cancel"
+  },
+  "patients": {
+    "details": {
+      "title": "Patient Profile",
+      "patientInfo": "Patient Information",
+      "medicalOverview": "Medical Overview",
+      "visitHistory": "Visit History",
+      "latestExaminations": "Latest Examinations",
+      "medicalNotes": "Medical Notes",
+      "gender": "Gender",
+      "birthDate": "Birth Date",
+      "height": "Height",
+      "weight": "Weight",
+      "cm": "cm",
+      "kg": "kg",
+      "previousDiagnoses": "Previous Diagnoses",
+      "highBloodPressure": "High Blood Pressure",
+      "asthma": "Asthma",
+      "bloodGroup": "Blood Group",
+      "allergies": "Allergies",
+      "penicillin": "Penicillin",
+      "latex": "Latex",
+      "viewDetails": "View Details",
+      "id": "ID",
+      "dummyNotes": "It is a long-established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+    }
   }
 }

@@ -8,28 +8,29 @@ import '../widgets/custom_app_bar_profile.dart';
 import 'doc/doc_content.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+  final String role;
+  const HomeView({super.key, required this.role});
 
   @override
   Widget build(BuildContext context) {
-    final role="doc";
     return Column(
       children: [
         CustomAppBarProfile(
-
-          title: 'hello omar',
-          subTitle: "here s' quick look at your appointments",
-          onMessageClicked: (){
+          title: 'home.appBar.title',
+          subTitle: "home.appBar.subtitle",
+          onMessageClicked: () {
             Navigator.pushNamed(context, AppRoutes.chatListView);
           },
-          onNotificationClicked: (){
+          onNotificationClicked: () {
             Navigator.pushNamed(context, AppRoutes.notificationView);
           },
-          onProfileImageClicked: (){
+          onProfileImageClicked: () {
             context.read<LayoutViewModel>().changeIndex(3);
           },
         ),
-        Expanded(child: role=="user"?UserContent():DocContent()),
+        Expanded(
+          child: (role == "user") ? const UserContent() : const DocContent(),
+        ),
       ],
     );
   }
